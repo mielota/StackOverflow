@@ -29,27 +29,8 @@ The whole game leans into a dark "code editor" aesthetic: monospace HUD, termina
 
 ## Building
 
-Requires a C11 compiler and [raylib](https://www.raylib.com/). On Linux, `pkg-config` is used to locate raylib automatically (falls back to `-lraylib -lGL -lm -lpthread -ldl -lrt -lX11` if `pkg-config` can't find it). Windows builds are cross-compiled with `x86_64-w64-mingw32-gcc` against the raylib SDK vendored under `lib/raylib-win64/`.
-
 ```sh
-make            # build native Linux binary -> bin/stack_overflow
-make windows    # cross-compile Windows binary -> bin/stack_overflow.exe
-make run        # build (if needed) and launch
-make BUILD=release  # optimized build (default is debug, -O0 -g)
-make clean      # remove build outputs
-make re         # clean + rebuild
-```
-
-Run the game from the repository root (`make run`, or `./bin/stack_overflow`) so it can find the `assets/` directory via its relative paths.
-
-## Project layout
-
-```
-src/            Game source (C11)
-assets/         Sprites, fonts, and audio (see assets/CREDITS.md for licensing)
-lib/raylib-win64/  Vendored raylib SDK for Windows cross-compilation
-save/           Local save/progress data (tutorial completion flag, etc.)
-Specifications_Stack_Overflow.pdf  Original design document (cahier des charges)
+cargo build --release
 ```
 
 ## Credits
