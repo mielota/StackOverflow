@@ -5,3 +5,7 @@ dist/
 save/
 /stack_overflow
 /stack_overflow.exe
+
+# Added by cargo
+
+/target
